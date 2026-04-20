@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Web site</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Times New Roman, serif; font-size: 14px; background: #fff; }
+
+    .topbar {
+      background-color: #00f;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+    }
+    .topbar input[type="text"] {
+      width: 120px;
+      padding: 2px 4px;
+      font-size: 13px;
+    }
+    .topbar input[type="submit"] {
+      font-size: 13px;
+      padding: 1px 6px;
+      margin-left: 2px;
+    }
+
+    .layout {
+      display: flex;
+    }
+
+    .sidebar {
+      background-color: #ff0;
+      width: 170px;
+      min-height: 400px;
+      padding: 10px 14px;
+      flex-shrink: 0;
+    }
+    .sidebar ul {
+      list-style: disc;
+      padding-left: 16px;
+    }
+    .sidebar ul li {
+      margin-bottom: 4px;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #00f;
+      font-size: 13px;
+    }
+    .sidebar ul li a:hover { text-decoration: underline; }
+
+    .content {
+      padding: 10px 20px;
+      flex: 1;
+    }
+    .content h1 {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .content img {
+      display: block;
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    .content p {
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <input type="text" name="search" placeholder="">
+    <input type="submit" value="Search...">
+  </div>
+
+  <div class="layout">
+
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Doc</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h1>My Web site</h1>
+      <img src="image.jpeg" alt="Image">
+      <p>
+        As the software industry moves into the second decade of the 21st century, software quality is increasingly 
+        becoming essential to all businesses and knowledge of software testing is becoming necessary for all software 
+        engineers. The course focus on the theoretical concepts of Software Testing with high emphasis on inclusion 
+        of the practical context which is equally needed to prepare the learner for the demands of this field in the workplace.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

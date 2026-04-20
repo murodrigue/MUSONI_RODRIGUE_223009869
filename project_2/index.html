@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        body { font-family: 'Times New Roman', serif; background-color: #f2f2f2; }
+        .form-box { background: #fff; width: 800px; margin: 30px auto; padding: 25px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; text-decoration: underline; font-size: 18px; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 10px; font-weight: bold; }
+        input[type="text"], input[type="email"], textarea, select { width: 100%; padding: 5px; border: 1px solid #ccc; }
+        .qual-table { border: 1px solid #000; margin-top: 10px; text-align: center; }
+        .qual-table th, .qual-table td { border: 1px solid #ccc; padding: 5px; font-weight: normal; }
+        .btn-group { text-align: center; margin-top: 20px; }
+        .btn-group input { padding: 5px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>STUDENT REGISTRATION FORM</h2>
+    <form action="connect.php" method="POST">
+        <table>
+            <tr><td>FIRST NAME</td><td><input type="text" name="fname"></td></tr>
+            <tr><td>LAST NAME</td><td><input type="text" name="lname"></td></tr>
+            <tr>
+                <td>DATE OF BIRTH</td>
+                <td>
+                    <select name="day" style="width: 20%;">
+                        <option>Day:</option>
+                        <?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
+                    </select>
+                    <select name="month" style="width: 30%;">
+                        <option>Month:</option>
+                        <?php $m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; 
+                              foreach($m as $month) echo "<option>$month</option>"; ?>
+                    </select>
+                    <select name="year" style="width: 25%;">
+                        <option>Year:</option>
+                        <?php for($i=1990;$i<=2026;$i++) echo "<option>$i</option>"; ?>
+                    </select>
+                </td>
+            </tr>
+            <tr><td>EMAIL ID</td><td><input type="email" name="email"></td></tr>
+            <tr><td>MOBILE NUMBER</td><td><input type="text" name="mobile" maxlength="10"></td></tr>
+            <tr>
+                <td>GENDER</td>
+                <td>
+                    Male <input type="radio" name="gender" value="Male">
+                    Female <input type="radio" name="gender" value="Female">
+                </td>
+            </tr>
+            <tr><td>ADDRESS</td><td><textarea name="address" rows="4"></textarea></td></tr>
+            <tr><td>CITY</td><td><input type="text" name="city"></td></tr>
+            <tr><td>PIN CODE</td><td><input type="text" name="pincode"></td></tr>
+            <tr><td>STATE</td><td><input type="text" name="state"></td></tr>
+            <tr>
+                <td>COUNTRY</td>
+                <td>
+                    <select name="country">
+                        <option value="India">India</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>HOBBIES</td>
+                <td>
+                    Drawing <input type="checkbox" name="hobbies[]" value="Drawing">
+                    Singing <input type="checkbox" name="hobbies[]" value="Singing">
+                    Dancing <input type="checkbox" name="hobbies[]" value="Dancing">
+                    Sketching <input type="checkbox" name="hobbies[]" value="Sketching"><br>
+                    Others <input type="checkbox" name="hobbies[]" value="Others"> <input type="text" name="other_hobby" style="width: 150px;">
+                </td>
+            </tr>
+            <tr>
+                <td>QUALIFICATION</td>
+                <td>
+                    <table class="qual-table">
+                        <tr><th>Sl.No.</th><th>Examination</th><th>Board</th><th>Percentage</th><th>Year of Passing</th></tr>
+                        <tr><td>1</td><td>Class X</td><td><input type="text" name="b1" maxlength="10"></td><td><input type="text" name="p1"></td><td><input type="text" name="y1"></td></tr>
+                        <tr><td>2</td><td>Class XII</td><td><input type="text" name="b2" maxlength="10"></td><td><input type="text" name="p2"></td><td><input type="text" name="y2"></td></tr>
+                        <tr><td>3</td><td>Graduation</td><td><input type="text" name="b3" maxlength="10"></td><td><input type="text" name="p3"></td><td><input type="text" name="y3"></td></tr>
+                        <tr><td>4</td><td>Masters</td><td><input type="text" name="b4" maxlength="10"></td><td><input type="text" name="p4"></td><td><input type="text" name="y4"></td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>COURSES APPLIED FOR</td>
+                <td>
+                    BCA <input type="radio" name="course" value="BCA">
+                    B.Com <input type="radio" name="course" value="BCom">
+                    B.Sc <input type="radio" name="course" value="BSc">
+                    B.A <input type="radio" name="course" value="BA">
+                </td>
+            </tr>
+        </table>
+        <div class="btn-group">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
